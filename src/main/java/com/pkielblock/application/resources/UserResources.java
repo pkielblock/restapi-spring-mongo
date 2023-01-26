@@ -1,5 +1,6 @@
 package com.pkielblock.application.resources;
 
+import com.pkielblock.application.domain.Post;
 import com.pkielblock.application.domain.User;
 import com.pkielblock.application.dto.UserDTO;
 import com.pkielblock.application.services.UserService;
@@ -56,5 +57,12 @@ public class UserResources {
         user = service.update(user);
 
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping(value = "/{id}/posts")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+         User user = service.findById(id);
+
+        return ResponseEntity.ok().body(user.getPosts());
     }
 }
