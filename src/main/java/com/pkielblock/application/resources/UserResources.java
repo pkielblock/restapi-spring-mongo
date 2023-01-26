@@ -1,6 +1,7 @@
 package com.pkielblock.application.resources;
 
 import com.pkielblock.application.domain.User;
+import com.pkielblock.application.dto.UserDTO;
 import com.pkielblock.application.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +19,10 @@ public class UserResources {
     private UserService service;
 
     @GetMapping
-    public ResponseEntity<List<User>> findAll() {
+    public ResponseEntity<List<UserDTO>> findAll() {
         List<User> list = service.findAll();
-        return ResponseEntity.ok().body(list);
+        List<UserDTO> listDTO = list.stream().map(UserDTO::new).toList();
+
+        return ResponseEntity.ok().body(listDTO);
     }
 }
