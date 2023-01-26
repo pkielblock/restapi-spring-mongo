@@ -1,9 +1,9 @@
-## REST API with Springboot and MongoDB
-Project to study REST APIs with Springboot and MongoDB
+## REST API with Spring Boot and MongoDB
+Project to study REST APIs with Spring Boot and MongoDB
 
 This project was created to study:
 
-* Java Springboot
+* Java Spring Boot
 * Rest API
 * Domain Model
 * Structure Logical Layers (resource, service, repository)
