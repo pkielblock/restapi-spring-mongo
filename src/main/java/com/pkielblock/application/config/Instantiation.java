@@ -2,6 +2,7 @@ package com.pkielblock.application.config;
 
 import com.pkielblock.application.domain.Post;
 import com.pkielblock.application.domain.User;
+import com.pkielblock.application.dto.AuthorDTO;
 import com.pkielblock.application.repositories.PostRepository;
 import com.pkielblock.application.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +35,8 @@ public class Instantiation implements CommandLineRunner {
 
         userRepository.saveAll(Arrays.asList(maria, alex, bob));
 
-        Post p1 = new Post(null, sdf.parse("21/03/2018"), "Partiu viagem", "Vou viajar para SP abraços", maria);
-        Post p2 = new Post(null, sdf.parse("23/03/2018"), "Bom dia", "Acorderi feliz hoje", maria);
+        Post p1 = new Post(null, sdf.parse("21/03/2018"), "Partiu viagem", "Vou viajar para SP abraços", new AuthorDTO(maria));
+        Post p2 = new Post(null, sdf.parse("23/03/2018"), "Bom dia", "Acorderi feliz hoje", new AuthorDTO(maria));
 
         postRepository.saveAll(Arrays.asList(p1, p2));
     }
