@@ -1,6 +1,7 @@
 package com.pkielblock.application.services;
 
 import com.pkielblock.application.domain.User;
+import com.pkielblock.application.dto.UserDTO;
 import com.pkielblock.application.repositories.UserRepository;
 import com.pkielblock.application.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,13 @@ public class UserService {
     public User findById(String id) {
         Optional<User> user = repository.findById(id);
         return user.orElseThrow(() -> new ObjectNotFoundException("Object Not Found"));
+    }
+
+    public User insert(User user) {
+        return repository.insert(user);
+    }
+
+    public User fromDTO(UserDTO userDTO) {
+        return new User(userDTO.getId(), userDTO.getName(), userDTO.getEmail());
     }
 }
