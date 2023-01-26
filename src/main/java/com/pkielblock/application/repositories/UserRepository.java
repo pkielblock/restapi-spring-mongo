@@ -1,4 +1,4 @@
-package com.pkielblock.application.repository;
+package com.pkielblock.application.repositories;
 
 import com.pkielblock.application.domain.User;
 import org.springframework.data.mongodb.repository.MongoRepository;

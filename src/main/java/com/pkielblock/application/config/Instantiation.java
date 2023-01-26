@@ -1,7 +1,7 @@
 package com.pkielblock.application.config;
 
 import com.pkielblock.application.domain.User;
-import com.pkielblock.application.repository.UserRepository;
+import com.pkielblock.application.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
